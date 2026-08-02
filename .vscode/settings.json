@@ -1,0 +1,14 @@
+"editor.tokenColorCustomizations": {
+    "textMateRules": [
+        {
+            "scope": [
+                "comment",
+                "entity.name.type",
+                "storage.type"
+            ],
+            "settings": {
+                "fontStyle": ""
+            }
+        }
+    ]
+}
