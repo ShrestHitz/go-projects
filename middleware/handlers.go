@@ -108,9 +108,43 @@ func UpdateStock(w http.ResponseWriter, r *http.Request){
 		Message: msg,
 	}
 
-	json.NewDecoder(w).Encode(res)
+	json.NewEnecoder(w).Encode(res)
 }
 
-func Deletestock(){
+func Deletestock(w http.ResponseWriter, r *http.Request){
+	params := mux.Vars(r)
+	id, err := strconv.ParseInt(params["id"])
+	if err != nil {
+		log.Fatalf("Unable to convert string to int %v", err)
+	}
+
+	deletedRows := deletestock(int64(id))
+
+	msg := fmt.Sprintf("Stock deleted successfully. Total rows/recods %v", deletedRows)
+
+	res := response{
+		ID : int64(id),
+		Message: msg,
+	}
+
+
+	json.NewEncoder(w).Encode(res)
+}
+
+func insertStock() int64{
 
 }
+
+func getStock(id int64)(){
+
+}
+
+func GETAllStock()(){
+
+}
+
+func UpdateStock(id int64, stock models.Stock) int64{
+
+}
+
+func deletestock
