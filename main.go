@@ -5,6 +5,7 @@ import(
 	"log"
 	"net/http"
 	"go-postgres-yt/router"
+	"github.com/lib/pq"
 )
 
 func main(){
